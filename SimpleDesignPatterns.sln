@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDesignPatterns", "SimpleDesignPatterns\SimpleDesignPatterns.csproj", "{E4F06625-1594-404A-BA40-C441655E3F83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsConsole", "PatternsConsole\PatternsConsole.csproj", "{AB402E36-22B7-4495-8367-92A06FE95A89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{E4F06625-1594-404A-BA40-C441655E3F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4F06625-1594-404A-BA40-C441655E3F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4F06625-1594-404A-BA40-C441655E3F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB402E36-22B7-4495-8367-92A06FE95A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB402E36-22B7-4495-8367-92A06FE95A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB402E36-22B7-4495-8367-92A06FE95A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB402E36-22B7-4495-8367-92A06FE95A89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
