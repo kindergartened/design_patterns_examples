@@ -12,13 +12,13 @@ class Program
             | |__| | |___| |___| |__| | | \ \  / ____ \| | | |__| | | \ \ 
             |_____/|______\_____\____/|_|  \_\/_/    \_\_|  \____/|_|  \_\                                                
          */
-        Beverage beverage = new Espresso();
+        IBeverage<Espresso> beverage = new Espresso();
         Console.WriteLine(beverage.GetDescription() + ": " + beverage.GetCost());
 
-        Beverage beverageWithMilk = new MilkDecorator(beverage);
+        IBeverage<Espresso> beverageWithMilk = new MilkDecorator(beverage);
         Console.WriteLine(beverageWithMilk.GetDescription() + ": " + beverageWithMilk.GetCost());
 
-        Beverage beverageWithMilkAndSugar = new SugarDecorator(beverageWithMilk);
+        IBeverage<Espresso> beverageWithMilkAndSugar = new SugarDecorator(beverageWithMilk);
         Console.WriteLine(beverageWithMilkAndSugar.GetDescription() + ": " + beverageWithMilkAndSugar.GetCost());
     }
 }
