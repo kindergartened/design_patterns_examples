@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SimpleDesignPatterns.FactoryMethod.GameObjects
 {
+    /// <summary>
+    /// Класс представляющий игровой объект - костёр
+    /// </summary>
     class Bonfire
     {
+        
     }
 }

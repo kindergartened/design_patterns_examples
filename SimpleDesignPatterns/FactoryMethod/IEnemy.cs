@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleDesignPatterns.FactoryMethod
+namespace SimpleDesignPatterns
 {
     /// <summary>
     /// Абстракция для врагов
     /// </summary>
-    interface IEnemy
+    public interface IEnemy
     {
         void BatleRoar();
     }

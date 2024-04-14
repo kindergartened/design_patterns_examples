@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SimpleDesignPatterns.FactoryMethod.GameObjects
 {
+    /// <summary>
+    /// Класс представляющий игровой объект - дерево
+    /// </summary>
     class Tree
     {
+
     }
 }

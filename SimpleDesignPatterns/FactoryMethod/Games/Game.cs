@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleDesignPatterns.FactoryMethod.Games
 {
-    class Game
+    public class Game
     {
         private RandomValley location;
         private Hero gamer;
@@ -40,7 +40,6 @@ namespace SimpleDesignPatterns.FactoryMethod.Games
 
         /// <summary>
         /// Здесь все игровые элементы взаимодействуют и рендерятся.
-        /// (на самом деле нет, потому что не в этом суть данного урока)
         /// </summary>
         public void StartGame()
         {
@@ -51,7 +50,7 @@ namespace SimpleDesignPatterns.FactoryMethod.Games
             Console.WriteLine("Игрок загружен");
             Console.WriteLine("YESSS, INDEED");
 
-            location.EnemyInfo(); // Выведем инфу о том, сколько и каких типов быдло у нас сгенерилось 
+            location.EnemyInfo();
 
         }
     }

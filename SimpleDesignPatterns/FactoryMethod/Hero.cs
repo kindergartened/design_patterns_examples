@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleDesignPatterns.FactoryMethod
+namespace SimpleDesignPatterns
 {
-    internal class Hero
+    /// <summary>
+    /// Класс представляющий главного героя
+    /// </summary>
+    class Hero
     {
+
     }
 }

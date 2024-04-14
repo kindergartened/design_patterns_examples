@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleDesignPatterns.FactoryMethod
+namespace SimpleDesignPatterns
 {
     /// <summary>
     /// Класс представляющий локацию

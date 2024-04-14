@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleDesignPatterns.FactoryMethod.Factories
 {
-    class EasyLVLEnemyFactory : IEnemyFactory
+    public class EasyLVLEnemyFactory : IEnemyFactory
     {
         private static Random rnd = new Random();
 

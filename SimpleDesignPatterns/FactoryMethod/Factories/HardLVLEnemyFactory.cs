@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace SimpleDesignPatterns.FactoryMethod.Factories
 {
-    internal class HardLVLEnemyFactory : IEnemyFactory
+    public class HardLVLEnemyFactory : IEnemyFactory
     {
         private static Random rnd = new Random();
         public IEnemy Create()
         {
             string[] enemies = new string[] {
-                "Нудист",
-                "Гопник"
+                "Дракон",
+                "Троль"
             };
 
-            switch (enemies[rnd.Next(0, enemies.Length)]) // Рандомно выбираем из гопников и нудистов
+            switch (enemies[rnd.Next(0, enemies.Length)])
             {
                 case "Дракон":
                     return new Dragon();

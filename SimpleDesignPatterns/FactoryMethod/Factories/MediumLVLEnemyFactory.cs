@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleDesignPatterns.FactoryMethod.Factories
 {
-    internal class MediumLVLEnemyFactory
+    public class MediumLVLEnemyFactory :IEnemyFactory
     {
         private static int HardEnemyCount = 0;
 
