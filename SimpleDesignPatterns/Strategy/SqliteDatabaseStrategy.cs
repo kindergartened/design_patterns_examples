@@ -1,34 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SQLite;
+﻿using System.Data.SQLite;
 
-namespace SimpleDesignPatterns.Strategy
+namespace SimpleDesignPatterns.Strategy;
+
+public class SqliteDatabaseStrategy: IDatabaseStrategy
 {
-    public class SqliteDatabaseStrategy: IDatabaseStrategy
+    private SQLiteConnection _connection;
+
+    public SqliteDatabaseStrategy()
     {
-        private SQLiteConnection _connection;
+        Connect();
+    }
 
-        public void Connect()
-        {
-            _connection = new SQLiteConnection("Data Source=MyDatabase.db;Version=3;");
-            _connection.Open();
-            Console.WriteLine("Connecting to SQLite database");
-        }
+    public void Connect()
+    {
+        _connection = new SQLiteConnection("Data Source=MyDatabase.db;Version=3;");
+        _connection.Open();
+    }
 
-        public void Query(string query)
-        {
-            SQLiteCommand command = new SQLiteCommand(query, _connection);
-            command.ExecuteNonQuery();
-            Console.WriteLine("Executing SQLite query: " + query);
-        }
+    public void Query(string query)
+    {
+        SQLiteCommand command = new SQLiteCommand(query, _connection);
+        var c = command.ExecuteNonQuery();
+        Console.WriteLine($"Executing SQLite query: {query}, inserted: {c}");
+    }
 
-        public void Disconnect()
-        {
-            _connection.Close();
-            Console.WriteLine("Disconnecting from SQLite database");
-        }
+    public void Disconnect()
+    {
+        _connection.Close();
+        Console.WriteLine("Disconnecting from SQLite database");
     }
 }
