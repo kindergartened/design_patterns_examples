@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace SimpleDesignPatterns.Strategy;
 
-namespace SimpleDesignPatterns.Strategy
+public class MongoDatabaseStrategy
 {
-    public class MongoDatabaseStrategy
+    public void Connect()
     {
-        public void Connect()
-        {
-            Console.WriteLine("Connecting to MongoDB database");
-        }
+        Console.WriteLine("Connecting to MongoDB database");
+    }
 
-        public void Query(string query)
-        {
-            // Implement MongoDB query execution here
-            Console.WriteLine("Executing MongoDB query: " + query);
-        }
+    public void Query(string query)
+    {
+        // Implement MongoDB query execution here
+        Console.WriteLine("Executing MongoDB query: " + query);
+    }
 
-        public void Disconnect()
-        {
-            Console.WriteLine("Disconnecting from MongoDB database");
-        }
+    public void Disconnect()
+    {
+        Console.WriteLine("Disconnecting from MongoDB database");
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SimpleDesignPatterns;
 using SimpleDesignPatterns.FactoryMethod.Factories;
 using SimpleDesignPatterns.FactoryMethod.Games;
+using SimpleDesignPatterns.Strategy;
 
 namespace PatternsConsole;
 
