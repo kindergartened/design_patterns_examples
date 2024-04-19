@@ -8,8 +8,6 @@ namespace SimpleDesignPatterns.Strategy
 {
     public class Context
     {
-       
-        {
             private IDatabaseStrategy _databaseStrategy;
 
             public Context(IDatabaseStrategy databaseStrategy)
@@ -30,4 +28,3 @@ namespace SimpleDesignPatterns.Strategy
             }
         }
     }
-}

@@ -8,31 +8,9 @@ class Program
 {
     static void Main()
     {
-        DatabaseContext context = new DatabaseContext(new SqliteDatabaseStrategy());
-        context.ExecuteQuery("CREATE TABLE IF NOT EXISTS Users (Id INT, Name TEXT)");
+        //DatabaseContext context = new DatabaseContext(new SqliteDatabaseStrategy());
+        //context.ExecuteQuery("CREATE TABLE IF NOT EXISTS Users (Id INT, Name TEXT)");
 
-        /*
-  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
-| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
-| |    _______   | || |  _________   | || |  _______     | || |      __      | || |  _________   | || |  _________   | || |    ______    | || |  ____  ____  | |
-| |   /  ___  |  | || | |  _   _  |  | || | |_   __ \    | || |     /  \     | || | |  _   _  |  | || | |_   ___  |  | || |  .' ___  |   | || | |_  _||_  _| | |
-| |  |  (__ \_|  | || | |_/ | | \_|  | || |   | |__) |   | || |    / /\ \    | || | |_/ | | \_|  | || |   | |_  \_|  | || | / .'   \_|   | || |   \ \  / /   | |
-| |   '.___`-.   | || |     | |      | || |   |  __ /    | || |   / ____ \   | || |     | |      | || |   |  _|  _   | || | | |    ____  | || |    \ \/ /    | |
-| |  |`\____) |  | || |    _| |_     | || |  _| |  \ \_  | || | _/ /    \ \_ | || |    _| |_     | || |  _| |___/ |  | || | \ `.___]  _| | || |    _|  |_    | |
-| |  |_______.'  | || |   |_____|    | || | |____| |___| | || ||____|  |____|| || |   |_____|    | || | |_________|  | || |  `._____.'   | || |   |______|   | |
-| |              | || |              | || |              | || |              | || |              | || |              | || |              | || |              | |
-| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
- '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
-        /*
-         _______  _______  _______ _________ _______  _______             _______  _______ _________          _______  ______  
-        (  ____ \(  ___  )(  ____ \\__   __/(  ___  )(  ____ )|\     /|  (       )(  ____ \\__   __/|\     /|(  ___  )(  __  \ 
-        | (    \/| (   ) || (    \/   ) (   | (   ) || (    )|( \   / )  | () () || (    \/   ) (   | )   ( || (   ) || (  \  )
-        | (__    | (___) || |         | |   | |   | || (____)| \ (_) /   | || || || (__       | |   | (___) || |   | || |   ) |
-        |  __)   |  ___  || |         | |   | |   | ||     __)  \   /    | |(_)| ||  __)      | |   |  ___  || |   | || |   | |
-        | (      | (   ) || |         | |   | |   | || (\ (      ) (     | |   | || (         | |   | (   ) || |   | || |   ) |
-        | )      | )   ( || (____/\   | |   | (___) || ) \ \__   | |     | )   ( || (____/\   | |   | )   ( || (___) || (__/  )
-        |/       |/     \|(_______/   )_(   (_______)|/   \__/   \_/     |/     \|(_______/   )_(   |/     \|(_______)(______/ 
-        */
         IEnemyFactory[] lvls = new IEnemyFactory[] { // инициализируем уровни сложности, пользователь будет их выбирать
                 new EasyLVLEnemyFactory(),
                 new MediumLVLEnemyFactory(),
@@ -60,25 +38,17 @@ class Program
 
         Console.ReadKey();
 
-        /*  _____  ______ _____ ____  _____         _______ ____  _____  
-            |  __ \|  ____/ ____/ __ \|  __ \     /\|__   __/ __ \|  __ \ 
-            | |  | | |__ | |   | |  | | |__) |   /  \  | | | |  | | |__) |
-            | |  | |  __|| |   | |  | |  _  /   / /\ \ | | | |  | |  _  / 
-                | |__| | |___| |___| |__| | | \ \  / ____ \| | | |__| | | \ \ 
-                |_____/|______\_____\____/|_|  \_\/_/    \_\_|  \____/|_|  \_\                                                
-             */
         IBeverage<Espresso> beverage = new Espresso();
         Console.WriteLine(beverage.GetDescription() + ": " + beverage.GetCost());
 
-        IBeverage<Espresso> beverageWithMilk = new MilkDecorator(beverage);
-        Console.WriteLine(beverageWithMilk.GetDescription() + ": " + beverageWithMilk.GetCost());
+        //IBeverage<Espresso> beverageWithMilk = new MilkDecorator(beverage);
+        //Console.WriteLine(beverageWithMilk.GetDescription() + ": " + beverageWithMilk.GetCost());
 
-        IBeverage<Espresso> beverageWithMilkAndSugar = new SugarDecorator(beverageWithMilk);
-        Console.WriteLine(beverageWithMilkAndSugar.GetDescription() + ": " + beverageWithMilkAndSugar.GetCost());
+        //IBeverage<Espresso> beverageWithMilkAndSugar = new SugarDecorator(beverageWithMilk);
+        //Console.WriteLine(beverageWithMilkAndSugar.GetDescription() + ": " + beverageWithMilkAndSugar.GetCost());
 
 
         Console.WriteLine("Добро пожаловать в приложение для работы с курсами валют!");
-
 
         Console.ReadKey();
         
