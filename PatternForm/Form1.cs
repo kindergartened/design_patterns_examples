@@ -17,7 +17,7 @@ namespace PatternForm
         {
             InitializeComponent();
             SetToolTip();
-            string musicPath = "sound.wav";
+            string musicPath = "../../../../sound.wav";
             soundPlayer = new SoundPlayer(musicPath);
             soundPlayer.PlayLooping();
         }
@@ -252,7 +252,7 @@ namespace PatternForm
             Image image = Image.FromFile("../../../../angryHam.jpg");
             strategy.BackgroundImage = image;
             label5.Text = "";
-            string musicPath = "End.wav";
+            string musicPath = "../../../../End.wav";
             soundPlayer = new SoundPlayer(musicPath);
             soundPlayer.Play();
 

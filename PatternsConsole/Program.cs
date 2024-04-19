@@ -9,9 +9,6 @@ class Program
 {
     static void Main()
     {
-        //DatabaseContext context = new DatabaseContext(new SqliteDatabaseStrategy());
-        //context.ExecuteQuery("CREATE TABLE IF NOT EXISTS Users (Id INT, Name TEXT)");
-
         IEnemyFactory[] lvls = new IEnemyFactory[] { // инициализируем уровни сложности, пользователь будет их выбирать
                 new EasyLVLEnemyFactory(),
                 new MediumLVLEnemyFactory(),
