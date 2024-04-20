@@ -1,23 +1,43 @@
-﻿namespace SimpleDesignPatterns.Strategy;
+﻿using SimpleDesignPatterns.Strategy.DB;
+using SimpleDesignPatterns.Strategy.IDatabases;
+
+namespace SimpleDesignPatterns.Strategy;
 
 public class Context
 {
-    private IDatabaseStrategy _databaseStrategy;
+    private IDatabase _databaseStrategy;
 
-    public Context(IDatabaseStrategy databaseStrategy)
+    public Context(DatabaseType type)
     {
-        _databaseStrategy = databaseStrategy;
-    }
-
-    public void SetDatabaseStrategy(IDatabaseStrategy databaseStrategy)
-    {
-        _databaseStrategy = databaseStrategy;
+        switch (type)
+        {
+            case DatabaseType.Mongo:
+                _databaseStrategy = new MongoDatabase();
+                break;
+            case DatabaseType.Postgres:
+                _databaseStrategy = new PostgresDatabase("");
+                break;
+            default:
+                _databaseStrategy = new SqliteDatabase("Data Source=../../../../sqlite.db;Version=3;");
+                break;
+        }
     }
 
     public void ExecuteQuery(string query)
     {
         _databaseStrategy.Connect();
-        _databaseStrategy.Query(query);
+
+        if (_databaseStrategy is ISqlDatabase sqlStrategy)
+        {
+            var database = sqlStrategy;
+            database.Query(query);
+        }
+        else if (_databaseStrategy is INoSqlDatabase noSqlStrategy)
+        {
+            var database = noSqlStrategy;
+            database.Query(query);
+        }
+
         _databaseStrategy.Disconnect();
     }
 }

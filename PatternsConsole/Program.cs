@@ -5,10 +5,36 @@ using SimpleDesignPatterns.Strategy;
 
 namespace PatternsConsole;
 
+struct Person
+{
+    public string Name { get; set; }
+    public string Surname { get; set; }
+}
+
 class Program
 {
     static void Main()
     {
+        var ctx = new Context(DatabaseType.SqLite);
+        Person[] persons = new[]
+        {
+            new Person
+            {
+                Name = "Yaroslave",
+                Surname = "Volchenko",
+            },
+            new Person()
+            {
+                Name = "Pavel",
+                Surname = "Kalinin",
+            },
+        };
+        for (var id = 1; id <= persons.Length; id++)
+        {
+            var person = persons[id - 1];
+            ctx.ExecuteQuery($"INSERT INTO test (id, name, surname) VALUES ({id}, '{person.Name}', '{person.Surname}')");
+        }
+
         IEnemyFactory[] lvls = new IEnemyFactory[] { // инициализируем уровни сложности, пользователь будет их выбирать
                 new EasyLVLEnemyFactory(),
                 new MediumLVLEnemyFactory(),
